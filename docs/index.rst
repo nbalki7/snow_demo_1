@@ -10,13 +10,19 @@ Documentation to demonstrate CI/CD on snowflake using sqitch.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   source/index
+   source/intro
+   source/Prequisites
+   source/GettingStarted
+   source/Jenkins
+   source/aws 
+   source/AzureDevOps
+   source/gcp
+   
 
-Indices and tables
-==================
+Authors
+-------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+-  Prem Dubey
+-  Chris Herrera
