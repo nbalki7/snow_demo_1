@@ -180,7 +180,7 @@ Jenkins
     You should see something like this in the logs
 
 
-        .. code-block::
+        .. code-block::  bash
 
             [Pipeline] // stage
             [Pipeline] stage
