@@ -19,7 +19,7 @@ Jenkins
 
     If you are using Jenkins and you want your builds to auto trigger on push, go ahead and add a `webhook`_ in your github repo for your jenkins server
 
-- Add the repo to you Jenkins installation
+- Add the repo to your Jenkins installation
 
     Use the `blueocean`_ plugin, it makes adding new repos very convienent.
 
@@ -179,37 +179,38 @@ Jenkins
 
     You should see something like this in the logs
 
-    .. code-block::
 
-        [Pipeline] // stage
-        [Pipeline] stage
-        [Pipeline] { (Deploy changes)
-        [Pipeline] withCredentials
-        [Pipeline] {
-        [Pipeline] sh
-        [owflake-sqitch-ci-cd_master-4KRIUCFJ5X7PGMBERRN6PYWQF2S5EEPCMF6ULWY3K4N5SP2RPD5A] Running shell script
-        + sqitch deploy db:snowflake://****:****@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
-        Adding registry tables to db:snowflake://****:@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
-        Deploying changes to db:snowflake://****:@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
-        + appschema .. ok
-        + users ...... ok
-        [Pipeline] }
-        [Pipeline] // withCredentials
-        [Pipeline] }
-        [Pipeline] // stage
-        [Pipeline] stage
-        [Pipeline] { (Verify changes)
-        [Pipeline] withCredentials
-        [Pipeline] {
-        [Pipeline] sh
-        [owflake-sqitch-ci-cd_master-4KRIUCFJ5X7PGMBERRN6PYWQF2S5EEPCMF6ULWY3K4N5SP2RPD5A] Running shell script
-        + sqitch verify db:snowflake://****:****@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
-        Verifying db:snowflake://****:@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
-        * appschema .. ok
-        * users ...... ok
-        Verify successful
-        [Pipeline] }
-        [Pipeline] // withCredentials
+        .. code-block::
+
+            [Pipeline] // stage
+            [Pipeline] stage
+            [Pipeline] { (Deploy changes)
+            [Pipeline] withCredentials
+            [Pipeline] {
+            [Pipeline] sh
+            [owflake-sqitch-ci-cd_master-4KRIUCFJ5X7PGMBERRN6PYWQF2S5EEPCMF6ULWY3K4N5SP2RPD5A] Running shell script
+            + sqitch deploy db:snowflake://****:****@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
+            Adding registry tables to db:snowflake://****:@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
+            Deploying changes to db:snowflake://****:@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
+            + appschema .. ok
+            + users ...... ok
+            [Pipeline] }
+            [Pipeline] // withCredentials
+            [Pipeline] }
+            [Pipeline] // stage
+            [Pipeline] stage
+            [Pipeline] { (Verify changes)
+            [Pipeline] withCredentials
+            [Pipeline] {
+            [Pipeline] sh
+            [owflake-sqitch-ci-cd_master-4KRIUCFJ5X7PGMBERRN6PYWQF2S5EEPCMF6ULWY3K4N5SP2RPD5A] Running shell script
+            + sqitch verify db:snowflake://****:****@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
+            Verifying db:snowflake://****:@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh
+            * appschema .. ok
+            * users ...... ok
+            Verify successful
+            [Pipeline] }
+            [Pipeline] // withCredentials
 
     As you can see the changes have been deployed successfully, and sqitch is also able to verify those changes.
 
