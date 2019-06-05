@@ -9,9 +9,13 @@ pipeline {
     }
   }
   stages {
-    stage('Installing Latest snowsql') {
+    stage('Moving snowsql to workspace') {
         steps {
-            sh 'snowsql --help'
+            sh '''
+              rm /bin/snowsql
+              mv /var/snowsql /bin/
+              mv /var/.snowsql ./
+            '''
         }
     }
     stage('Deploy changes') {
