@@ -4,12 +4,12 @@ pipeline {
   }
   agent {
     docker {
-      image 'hashmapinc/sqitch:snowflake-dev'
+      image 'hashmapinc/sqitch:snowflake'
       args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
     }
   }
   stages {
-    stage('Moving snowsql to workspace') {
+    stage('Moving .snowsql to workspace and snowsql to bin') {
         steps {
             sh '''
               rm /bin/snowsql
