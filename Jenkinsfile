@@ -9,13 +9,9 @@ pipeline {
     }
   }
   stages {
-    stage('Moving snowsql to workspace') {
+    stage('Moving .snowsql to workspace') {
         steps {
-            sh '''
-              rm /bin/snowsql
-              mv /var/snowsql /bin/
-              mv /var/.snowsql ./
-            '''
+            sh 'mv /var/.snowsql ./' 
         }
     }
     stage('Deploy changes') {
