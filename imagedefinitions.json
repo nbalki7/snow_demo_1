@@ -1,0 +1,6 @@
+[
+  {
+    "name": "snowflake-sqitch",
+    "imageUri": "docker.io/hashmapinc/sqitch:snowflake"
+  }
+]
