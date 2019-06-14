@@ -4,8 +4,8 @@ pipeline {
   }
   agent {
     docker {
-      image 'hashmapinc/sqitch:snowflake'
-      args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
+      image 'hashmapinc/sqitch:aws'
+      args "-u root -v /var/run/docker.sock:/var/run/docker.sock"
     }
   }
   stages {
