@@ -1,6 +1,6 @@
 %syntax-version=1.0.0
 %project=flipr
-%uri=https://github.com/prem0132/snowflake-sqitch-ci-cd
+%uri=https://github.com/hashmapinc/snowflake-sqitch-ci-cd
 
 appschema 2018-07-27T14:27:24Z Prem Dubey <prem.dubey@hashmapinc.com> # Add schema for all flipr objects.
 users [appschema] 2018-07-27T15:03:56Z Prem Dubey <prem.dubey@hashmapinc.com> # Creates table to track our users.
