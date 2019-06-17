@@ -5,7 +5,7 @@ pipeline {
   agent {
     docker {
       image 'hashmapinc/sqitch:jenkins'
-      args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
+      args "-u root -v /var/run/docker.sock:/var/run/docker.sock"
     }
   }
   stages {
@@ -22,7 +22,7 @@ pipeline {
       steps {
         withCredentials(bindings: [usernamePassword(credentialsId: 'snowflake_creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           sh '''
-              sqitch deploy "db:snowflake://$USERNAME:$PASSWORD@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh"
+              sqitch revert "db:snowflake://$USERNAME:$PASSWORD@hashmap.snowflakecomputing.com/flipr?Driver=Snowflake;warehouse=sqitch_wh"
               '''           
         }
       }
