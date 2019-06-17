@@ -4,7 +4,7 @@ pipeline {
   }
   agent {
     docker {
-      image 'hashmapinc/sqitch:aws'
+      image 'hashmapinc/sqitch:jenkins'
       args "-u root -v /var/run/docker.sock:/var/run/docker.sock"
     }
   }
@@ -12,8 +12,6 @@ pipeline {
     stage('Moving .snowsql to workspace and snowsql to bin') {
         steps {
             sh '''
-              rm /bin/snowsql
-              mv /var/snowsql /bin/
               mv /var/.snowsql ./
             '''
         }
