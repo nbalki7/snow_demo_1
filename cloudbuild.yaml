@@ -6,8 +6,9 @@ steps:
         "build",
         "-t",
         "gcr.io/$PROJECT_ID/snowflake-deploy",
-        ".",
         "--build-arg",
-        '"USERNAME={_USERNAME}"',
-        '"PASSWORD={_PASSWORD}"',
+        "USERNAME={_USERNAME}",
+        "PASSWORD={_PASSWORD}",
+        ".",
+
       ]
