@@ -12,3 +12,6 @@ steps:
         '.',
 
       ]
+substitutions:
+    _USERNAME: {_USERNAME}
+    _PASSWORD: {_PASSWORD}
