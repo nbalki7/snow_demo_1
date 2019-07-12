@@ -1,4 +1,13 @@
 steps:
   # build the container image
   - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/$PROJECT_ID/snowflake-deploy", "."]
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/$PROJECT_ID/snowflake-deploy",
+        ".",
+        "--build-arg",
+        "USERNAME=$USERNAME",
+        "PASSWORD=$PASSWORD",
+      ]
